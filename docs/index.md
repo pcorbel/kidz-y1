@@ -39,6 +39,14 @@ title: Kidz Y1
     </div>
   </section>
 
+  <section class="installation-section">
+    <h2>📥 Installation</h2>
+    <ol>
+      <li><strong>Download the latest ROM</strong> — Get the latest <code>rom.zip</code> from <a href="https://github.com/pcorbel/kidz-y1/releases/latest">GitHub Releases</a>.</li>
+      <li><strong>Install with the Innioasis Updater</strong> — Use the official <a href="https://innioasis.app/">Innioasis Updater</a> app to install the ROM on your Y1 device.</li>
+    </ol>
+  </section>
+
   <section class="images-section">
     <h2>📸 Screenshots</h2>
     <div class="screenshots-grid">

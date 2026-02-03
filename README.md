@@ -13,6 +13,11 @@ Perfect for:
 - 📚 Educational content organized by subject or story
 - 🎭 Audiobooks and stories organized by series
 
+## 📥 Installation
+
+1. **Download the latest ROM** — Get the latest `rom.zip` from [GitHub Releases](https://github.com/pcorbel/kidz-y1/releases/latest).
+2. **Install with the Innioasis Updater** — Use the official [Innioasis Updater](https://innioasis.app/) app to install the ROM on your Y1 device.
+
 ## 🔄 Switching Between Apps
 
 You can switch between the Stock launcher and Kidz by pressing and holding the back button for 5 seconds. This allows you to easily access the full Stock interface when needed, while keeping the simple Kidz interface as the one for kids.
