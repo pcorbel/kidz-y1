@@ -24,7 +24,6 @@ deploymentTargetDropDown.xml
 render.experimental.xml
 
 # Keystore files
-*.jks
 *.keystore
 
 # Google Services (e.g. APIs or Firebase)
@@ -32,3 +31,20 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# Packaging files (ROM images, signing keys)
+packaging
+
+# Gradle
+gradlew.bat
+.gradle/
+
+# VSCode
+.vscode/
+
+# Docs
+docs/.bundle/
+docs/vendor/
+docs/_site/
+docs/Gemfile
+docs/Gemfile.lock

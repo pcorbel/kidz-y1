@@ -1,0 +1,90 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.kidz.y1'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.kidz.y1"
+        minSdk 17
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildFeatures {
+        buildConfig true
+        viewBinding true
+    }
+
+    signingConfigs {
+        platform {
+            def keystoreFile = file("${project.rootDir}/platform.jks")
+            if (keystoreFile.exists()) {
+                storeFile keystoreFile
+                storePassword "android"
+                keyAlias "platform"
+                keyPassword "android"
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.platform
+        }
+        debug {
+            debuggable true
+            signingConfig signingConfigs.platform
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    // AndroidX Core (versions that support API 17)
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core:1.12.0'
+    // AndroidX Annotations for thread safety annotations
+    implementation 'androidx.annotation:annotation:1.7.1'
+    
+    // ViewModel and LiveData (versions compatible with API 17)
+    // Using 2.2.0 which supports API 14+
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.2.0'
+    // Include lifecycle-process 2.2.0 explicitly (supports API 14+, compatible with API 17)
+    implementation 'androidx.lifecycle:lifecycle-process:2.2.0'
+    // SavedStateHandle for state restoration (supports API 14+)
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0'
+    
+    // Glide for image loading (latest version, supports API 14+)
+    implementation('com.github.bumptech.glide:glide:4.16.0') {
+        exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
+        exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
+    }
+    // Glide annotation processor - REQUIRED for @GlideModule to work
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+}
+
+// Exclude incompatible dependencies
+configurations.all {
+    // Exclude old Kotlin JDK extension modules globally to avoid duplicate classes
+    // (newer Kotlin stdlib includes these extensions, so the old separate modules conflict)
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
+}
