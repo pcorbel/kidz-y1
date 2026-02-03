@@ -1,4 +1,4 @@
-/* Modern, Beautiful Styles for Kidz Y1 GitHub Pages */
+/* Modern, Beautiful Styles for Kidz-Y1 GitHub Pages */
 
 :root {
   --primary-color: #FFD700;
@@ -166,14 +166,42 @@ section p {
   margin: 0;
 }
 
+/* Installation Steps */
+.install-steps {
+  margin-top: 1.5rem;
+}
+
+.install-step {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.install-step p {
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.install-image {
+  max-width: 520px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
 /* Screenshots Section */
 .images-section {
   margin: 0;
 }
 
 .screenshots-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
   margin-top: 1.5rem;
 }
@@ -181,12 +209,18 @@ section p {
 .screenshot-card {
   background: transparent;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 420px;
 }
 
 .screenshot-image {
   width: 100%;
+  max-width: 420px;
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 
 .screenshot-caption {

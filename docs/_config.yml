@@ -1,11 +1,11 @@
-title: Kidz Y1 - Kids MP3 Player
+title: Kidz-Y1 - Kids MP3 Player
 description: A simple MP3 player designed for kids
 plugins:
   - jekyll-seo-tag
 
 # Site settings
 url: "https://pcorbel.github.io"
-baseurl: "/storiies-y1"
+baseurl: "/kidz-y1"
 
 # Build settings
 markdown: kramdown
