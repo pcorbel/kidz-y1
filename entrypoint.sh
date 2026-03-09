@@ -128,7 +128,14 @@ for file in boot.img recovery.img logo.bin lk.bin preloader*.bin cache.img secro
         cp "$BASE_ROM_DIR/$file" "$WORK_DIR/base/"
     fi
 done
-    
+
+# Copy scatter and history.ini
+ABS_WORKSPACE=$(cd /workspace && pwd)
+for extra_file in MT6572_Android_scatter.txt history.ini; do
+    echo_info "Copying $extra_file from workspace into ROM..."
+    cp "$ABS_WORKSPACE/$extra_file" "$WORK_DIR/base/"
+done
+
 cd "$WORK_DIR/base"
 ABS_BASE_DIR=$(pwd)
 
